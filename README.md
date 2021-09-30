@@ -5,3 +5,4 @@
 ### Integrantes
 
 * Juan Felipe Barahona Gonzalez
+* Sebastian Felipe Moreno Gómez
