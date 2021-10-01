@@ -1,6 +1,6 @@
 # LA LIBRERÍA
 
-## MinTic ciclo 3
+## MinTic ciclo 3 Grupo 2
 
 ### Integrantes
 
