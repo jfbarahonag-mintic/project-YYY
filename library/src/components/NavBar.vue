@@ -31,7 +31,7 @@
                         <a class="nav-link disabled" aria-current="page" href="#">DONAR</a>
                     </li>
                 </ul>
-                <form class="d-flex ps-1" style="background-color: #202d59;">
+                <form class="ps-1 d-none d-lg-flex" style="background-color: #202d59;">
                 <label for="form-control" class="text-light me-1 align-self-center">Libros</label>
                 <input class="form-control" type="search" placeholder="Buscar..." aria-label="Search">
                     <button class="btn" type="submit">
