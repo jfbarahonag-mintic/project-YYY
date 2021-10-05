@@ -37,6 +37,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="../assets/book_3.jpg" class="" alt="...">
+                        </div>
+                        <div class="col-4">
+                            <img src="../assets/book_3.jpg" class="" alt="...">
+                        </div>
+                        <div class="col-4">
+                            <img src="../assets/book_3.jpg" class=" " alt="...">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="d-flex justify-content-between py-2">
                 <button class="carousel-control-prev position-static w-auto rounded-circle p-2 mx-2" type="button" data-bs-target="#novelties" data-bs-slide="prev" style="background-color: rgba(0,0,0,0.3)">
@@ -90,8 +103,21 @@
                         </div>
                     </div>
                 </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="../assets/book_3.jpg" class="" alt="...">
+                        </div>
+                        <div class="col-4">
+                            <img src="../assets/book_3.jpg" class="" alt="...">
+                        </div>
+                        <div class="col-4">
+                            <img src="../assets/book_3.jpg" class=" " alt="...">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="d-flex justify-content-between py-2">
+            <div class="d-flex justify-content-between py-2 position-relative">
                 <button class="carousel-control-prev position-static w-auto rounded-circle p-2 mx-2" type="button" data-bs-target="#recommended" data-bs-slide="prev" style="background-color: rgba(0,0,0,0.3)">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
@@ -136,6 +162,19 @@
                         <div class="col-4">
                             <a href=""><img src="../assets/book_2.jpg" class="" alt="..."></a>
 
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="../assets/book_3.jpg" class="" alt="...">
+                        </div>
+                        <div class="col-4">
+                            <img src="../assets/book_3.jpg" class="" alt="...">
+                        </div>
+                        <div class="col-4">
+                            <img src="../assets/book_3.jpg" class=" " alt="...">
                         </div>
                     </div>
                 </div>
