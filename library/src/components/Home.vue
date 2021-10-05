@@ -54,9 +54,14 @@
     <!-- recomendados -->
     <div class="d-flex flex-column align-items-center my-2" style="background-color: #eef4f6">
         <div class="ms-5 align-self-start">
-            <h3>Novedades</h3>
+            <h3>Recomendados</h3>
         </div>
         <div id="recommended" class="carousel slide w-100" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#recommended" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#recommended" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#recommended" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
             <div class="carousel-inner container">
                 <div class="carousel-item active">
                     <div class="row">
