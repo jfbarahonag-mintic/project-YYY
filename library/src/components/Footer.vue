@@ -4,7 +4,7 @@
         <div class="container-fluid text-light p-3" style="background-color:rgba(18, 26, 47, 0.73)">
             <div class="row">
                 <!-- centro de ayuda -->
-                <div class="col-12 col-xl-4 centro-ayuda">
+                <div class="col-12 col-lg-4 centro-ayuda">
                     <div class="border border-white rounded p-1">
                         <h6>Centro de ayuda</h6>
                         <ul class="list-unstyled rounded px-2">
@@ -17,7 +17,7 @@
                 </div>
                 <!-- end centro de ayuda -->
                 <!-- creadores -->
-                <div class=" col-12 col-xl-5 creators">
+                <div class=" col-12 col-lg-5 creators d-none d-lg-block">
                     <div class="border border-white rounded d-flex flex-column align-items-center p-1">
                         <h6>Creadores</h6>
                         <ul class="list-unstyled d-flex">
@@ -71,7 +71,7 @@
                 </div>
                 <!-- end creadores -->
                 <!-- redes -->
-                <div class="col-12 col-xl-3 social h-100 d-flex flex-column justify-content-center align-items-center">
+                <div class="col-12 col-lg-3 social h-100 d-flex flex-column justify-content-center align-items-center">
                     <div class="d-flex flex-column">
                         <h6>Sobre nosotros</h6>
                         <div class="imgs">
