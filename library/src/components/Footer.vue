@@ -2,7 +2,7 @@
     <footer class="d-flex flex-column">
         <!-- informacion -->
         <div class="container-fluid text-light p-3" style="background-color:rgba(18, 26, 47, 0.73)">
-            <class class="row">
+            <div class="row">
                 <!-- centro de ayuda -->
                 <div class="col-12 col-xl-4 centro-ayuda">
                     <div class="border border-white rounded p-1">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <!-- end redes -->
-            </class>
+            </div>
         </div>
         <!-- copyright -->
         <div class="container-xxl" style="background-color:rgba(18, 26, 47, 1)">
