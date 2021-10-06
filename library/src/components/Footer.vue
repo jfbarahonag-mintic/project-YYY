@@ -1,7 +1,7 @@
 <template>
     <footer class="d-flex flex-column">
         <!-- informacion -->
-        <div class="container-fluid text-light p-3" style="background-color:rgba(18, 26, 47, 0.73)">
+        <div v-if="minimalist === false" class="container-fluid text-light p-3" style="background-color:rgba(18, 26, 47, 0.73)">
             <div class="row">
                 <!-- centro de ayuda -->
                 <div class="col-12 col-lg-4 centro-ayuda">
@@ -84,9 +84,30 @@
                 <!-- end redes -->
             </div>
         </div>
+        <div v-else class="container-fluid text-light" style="background-color:rgba(18, 26, 47, 0.73)">
+            <div class="row">
+                <div class="col-12 col-md-4 border-end border-dark">
+                    <a class="nav-link text-light" href="#">Centro de ayuda</a>
+                    <a class="nav-link text-light" href="#">Preguntas frecuentes</a>
+                </div>
+                <div class="col-12 col-md-4 border-end border-dark">
+                    <div class="d-flex flex-column">
+                        <a class="nav-link text-light \" href="#">Sobre nosotros</a>
+                        <div class="imgs d-none d-md-block">
+                            <img src="" alt="fb">
+                            <img src="" alt="ig">
+                            <img src="" alt="tw">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 border-start border-dark d-flex align-items-center justify-content-center">
+                    <a class="nav-link text-light" href="#">Contactanos</a>
+                </div>
+            </div>
+        </div>
         <!-- copyright -->
         <div class="container-xxl" style="background-color:rgba(18, 26, 47, 1)">
-            <div class="-end f6-6 text-wrap text-light text-sm-end me-2" >
+            <div class="text-wrap text-light text-center text-md-end me-2" >
                 Mision TIC 2022 | Todos los derechos reservados ®
             </div>
         </div>
@@ -97,7 +118,12 @@
 export default {
     name: 'Footer',
     components: {},
-    props: {},
+    props: {
+        minimalist: {
+            type: Boolean,
+            default: false,
+        },
+    },
 };
 </script>
 

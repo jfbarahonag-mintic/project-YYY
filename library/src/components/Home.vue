@@ -13,7 +13,7 @@
     <Carousel title="Mas Vendidos" id="mas-vendidos"/>
     <!-- end mas vendidos -->
     <!-- footer -->
-    <Footer/>
+    <Footer :minimalist=true />
     <!-- end footer -->
 </div>
 </template>
