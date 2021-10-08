@@ -1,23 +1,8 @@
-<template class="h-100">
-    <div class="container-xxl" style="height: 100vh">
+<template>
+    <div class="container-fluid" style="height: 100vh">
         <div class="row h-100">
             <!-- aside -->
-            <aside class=" col-2 d-none d-lg-flex flex-column align-items-center justify-content-around" style="background-color: #40B9DF;">
-                <router-link class="mb-2" to="/home"><svg width="110" height="110" viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="0.5" y="0.5" width="79" height="69" stroke="black"/>
-                    <circle cx="39.5" cy="35.5" r="32" fill="#C4C4C4" stroke="black"/>
-                </svg></router-link>
-                <div>
-                    <p class="h3 text-end" style="color:#ffffff">
-                        Gracias por hacer parte de esta gran <b style="color:#FFCC82;">comunidad</b> amante de la lectura.
-                    </p>
-                </div>
-                <div>
-                    <p class="h2">
-                        📘 
-                    </p>
-                </div>
-            </aside>
+            <Aside :registered="false"></Aside>
             <!-- main -->
             <section class=" col-12 col-lg-10 d-flex flex-column justify-content-around align-items-center">
                 <div class="p-2 go-to-register align-self-end">
@@ -50,11 +35,13 @@
 
 <script>
 import Footer from '../components/Footer.vue'
+import Aside from '../components/Aside.vue'
 
 export default {
     name: 'Login',
     components: {
-        Footer
+        Footer,
+        Aside,
     }
 }
 </script>
