@@ -11,3 +11,4 @@ Este proyecto consta de un e-commerce de una libreria que permite comprar y dona
 * Milton Ceballos
 * Sebastian Felipe Moreno Gómez
 * Bladimir Rojas Motta
+* José Elice Villamizar Torres
