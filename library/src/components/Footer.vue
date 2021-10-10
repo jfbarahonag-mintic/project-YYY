@@ -106,7 +106,7 @@
             </div>
         </div>
         <!-- copyright -->
-        <div class="container-xxl" style="background-color:rgba(18, 26, 47, 1)">
+        <div class="" style="background-color:rgba(18, 26, 47, 1)">
             <div class="text-wrap text-light text-center text-md-end me-2" >
                 Mision TIC 2022 | Todos los derechos reservados ®
             </div>
