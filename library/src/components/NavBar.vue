@@ -3,13 +3,13 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(255, 255, 255, 0.41);">
         <div class="container-xxl">
             <!-- logo -->
-            <a class="navbar-brand" href="#">
+            <router-link class="navbar-brand" to="/">
                 <svg width="80" height="70" viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.5" y="0.5" width="79" height="69" stroke="black"/>
                     <circle cx="39.5" cy="35.5" r="32" fill="#C4C4C4" stroke="black"/>
                 </svg>
                 La libreria
-            </a>
+            </router-link>
             <!-- end logo -->
             <!-- responsive button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
