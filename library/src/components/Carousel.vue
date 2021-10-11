@@ -5,43 +5,10 @@
         </div>
         <div :id="id" class="carousel slide w-100" data-bs-ride="carousel">
             <div class="carousel-inner container">
-                <div class="carousel-item active">
+                <div class="carousel-item" v-for="(booksGroup, idx) in splitBooks" :key="idx" :class="{active: idx === 0}">
                     <div class="row">
-                        <div class="col-4">
-                            <img src="../assets/book_1.jpg" class="" alt="...">
-                        </div>
-                        <div class="col-4">
-                            <img src="../assets/book_1.jpg" class="" alt="...">
-
-                        </div>
-                        <div class="col-4">
-                            <img src="../assets/book_1.jpg" class="" alt="...">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="../assets/book_2.jpg" class="" alt="...">
-                        </div>
-                        <div class="col-4">
-                            <img src="../assets/book_2.jpg" class="" alt="...">
-                        </div>
-                        <div class="col-4">
-                            <img src="../assets/book_2.jpg" class="" alt="...">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-4">
-                            <img src="../assets/book_3.jpg" class="" alt="...">
-                        </div>
-                        <div class="col-4">
-                            <img src="../assets/book_3.jpg" class="" alt="...">
-                        </div>
-                        <div class="col-4">
-                            <img src="../assets/book_3.jpg" class=" " alt="...">
+                        <div class="col-4" v-for="(book, idx) in booksGroup" :key="idx">
+                                <router-link :to="'/book/' + book.ISBN"><img :src="book.imgUrl" :alt="book.title"></router-link>                            
                         </div>
                     </div>
                 </div>
@@ -62,7 +29,24 @@
 
 <script>
 export default {
-    props: ['title', 'id']
+    props: ['title', 'id', 'books'],
+
+    computed: {
+        splitBooks: function() {
+            let group = []
+
+            for (let index = 0; index < this.books.length; index+=3) {
+                group.push(this.books.slice(index, index + 3))
+            }
+
+            return group
+        }
+    },
+
+    data() {
+        return {
+        }
+    }
 }
 </script>
 
