@@ -14,46 +14,46 @@
                 </svg></router-link>
                 
                 <h1><b>REGISTRO</b></h1>
-                <form class="w-50">
-                    <div class="mb-3">
-                        <label for="fname" class="form-label">Nombre(s)</label>
-                        <input  placeholder="Pepito" type="text" class="form-control" id="fname">
+                <form class="w-50 form" @submit.prevent="register">
+                    <div class="mb-3 d-flex flex-column">
+                        <label for="fname" class="text-start form-label">Nombre(s)</label>
+                        <input required v-model="f_name" placeholder="Pepito" type="text" class="form-control" id="fname">
                     </div>
-                    <div class="mb-3">
-                        <label for="lname" class="form-label">Apellido(s)</label>
-                        <input  placeholder="Perez Pombo" type="text" class="form-control" id="lname">
+                    <div class="mb-3 d-flex flex-column">
+                        <label for="lname" class="text-start form-label">Apellido(s)</label>
+                        <input required  v-model="l_name" placeholder="Perez Pombo" type="text" class="form-control" id="lname">
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 d-flex flex-column">
                         <label for="email" class="form-label text-start">Correo electronico</label>
-                        <input  placeholder="example@email.com" type="email" class="form-control" id="email">
+                        <input required v-model="email" placeholder="example@email.com" type="email" class="form-control" id="email">
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 d-flex flex-column">
                         <label for="doc" class="form-label text-start">Documento</label>
-                        <select class="form-select" aria-label="Default select example" id="doc">
+                        <select v-model="document.type" class="form-select" aria-label="Default select example" id="doc">
                             <option selected>*Seleccionar</option>
                             <option value="CC">Cedula de ciudadania</option>
                             <option value="TI">Tarjeta de identidad</option>
                             <!-- <option value="3">Three</option> -->
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="doc-number" class="form-label">Numero de documento</label>
-                        <input  placeholder="Numero documento" type="text" class="form-control" id="doc-number">
+                    <div class="mb-3 d-flex flex-column">
+                        <label for="doc-number" class="form-label text-start">Numero de documento</label>
+                        <input required v-model="document.number" placeholder="Numero documento" type="text" class="form-control" id="doc-number">
                     </div>
-                    <div class="mb-3">
-                        <label for="cel-number" class="form-label">Numero de celular</label>
-                        <input  placeholder="Celular" type="tel" class="form-control" id="cel-number">
+                    <div class="mb-3 d-flex flex-column">
+                        <label for="cel-number" class="form-label text-start">Numero de celular</label>
+                        <input required v-model="phone" placeholder="Celular" type="tel" class="form-control" id="cel-number">
                     </div>
-                    <div class="mb-3">
-                        <label for="pswd" class="form-label">Contrasena</label>
-                        <input  placeholder="Tu password" type="password" class="form-control" id="pswd">
+                    <div class="mb-3 d-flex flex-column">
+                        <label for="pswd" class="form-label text-start">Contrasena</label>
+                        <input required v-model="pswd" placeholder="Tu password" type="password" class="form-control" id="pswd">
                     </div>
-                    <div class="mb-3">
-                        <label for="pswd'repeat" class="form-label">Confirmar contrasena</label>
-                        <input  placeholder="Tu password" type="password" class="form-control" id="pswd'repeat">
+                    <div class="mb-3 d-flex flex-column">
+                        <label for="pswd'repeat" class="form-label text-start">Confirmar contrasena</label>
+                        <input required v-model="ver_pswd" placeholder="Tu password" type="password" class="form-control" id="pswd'repeat">
                     </div>
 
-                    
+
                     <button type="submit" class="btn mb-2 py-3" style="background-color: #CFEAFD">REGISTRARME</button>
                 </form>
                 
@@ -71,10 +71,35 @@ export default {
     components: {
         Aside,
         Footer,
+    },
+
+    data() {
+        return {
+            f_name: "",
+            l_name: "",
+            email: "",
+            document: {
+                type: "",
+                number: ""
+            },
+            phone: "",
+            pswd: "",
+            ver_pswd: "",
+            error: false
+        }
+    },
+
+    methods: {
+        register: function() {
+            
+            // send to BE
+        }
     }
 }
 </script>
 
-<style>
-
+<style scoped>
+    .go-to:hover {
+        background-color: rgba(64, 185, 223, 0.1);
+    }
 </style>
