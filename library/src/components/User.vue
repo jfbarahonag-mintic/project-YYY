@@ -17,7 +17,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <li><router-link to="/login" class="dropdown-item">INICIAR SESION</router-link></li>
-                        <li><a class="dropdown-item" href="#">REGISTRARSE</a></li>
+                        <li><router-link to="/register" class="dropdown-item">REGISTRARSE</router-link></li>
                     </ul>
                 </div>
             </div>
