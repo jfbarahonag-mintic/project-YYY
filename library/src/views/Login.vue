@@ -8,7 +8,7 @@
                 <div class="p-2 go-to-register align-self-end">
                     <span class="me-5 text-muted">Aun no tienes una cuenta?</span><router-link class="go-to btn btn-outline-secondary text-muted" to="/register">REGISTRATE</router-link>
                 </div>
-                <router-link class="go-to d-block d-lg-none mb-2" to="/home"><svg width="110" height="110" viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <router-link class="go-to d-block d-lg-none mb-2" to="/"><svg width="110" height="110" viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.5" y="0.5" width="79" height="69" stroke="black"/>
                     <circle cx="39.5" cy="35.5" r="32" fill="#C4C4C4" stroke="black"/>
                 </svg></router-link>
@@ -63,6 +63,10 @@ export default {
                 pswd: this.pswd,
             }).then(res => {
                 console.log(res.data)
+                if (res.data.status !== 'not logged') {
+                    const { email } = res.data.data
+                    this.$router.push( { name:'Home', params: {username: email} } )
+                }
             }).catch(e => {
                 console.log(e)
             })
