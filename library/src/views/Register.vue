@@ -65,8 +65,13 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 import Aside from '../components/Aside.vue'
 import Footer from '../components/Footer.vue'
+
+let BE_URL = "http://localhost:3000/api/v1/users"
+
 export default {
     components: {
         Aside,
@@ -91,8 +96,21 @@ export default {
 
     methods: {
         register: function() {
-            
-            // send to BE
+            const url = `${BE_URL}/register`
+            const {type, number} = this.document
+            axios.post(url, {
+                f_name: this.f_name,
+                l_name: this.l_name,
+                email: this.email,
+                pswd: this.pswd,
+                doc_type: type,
+                doc_num: number,
+                phone: this.phone,
+            }).then(res => {
+                console.log(res)
+            }).catch(e => {
+                console.log(e)
+            })
         }
     }
 }

@@ -34,8 +34,12 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 import Footer from '../components/Footer.vue'
 import Aside from '../components/Aside.vue'
+
+let BE_URL = "http://localhost:3000/api/v1/users"
 
 export default {
     name: 'Login',
@@ -53,8 +57,15 @@ export default {
 
     methods: {
         login: function() {
-            
-            // send to BE
+            const url = `${BE_URL}/login`
+            axios.post(url, {
+                email: this.email,
+                pswd: this.pswd,
+            }).then(res => {
+                console.log(res.data)
+            }).catch(e => {
+                console.log(e)
+            })
         }
     }
 }
