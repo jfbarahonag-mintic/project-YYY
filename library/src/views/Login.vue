@@ -14,14 +14,14 @@
                 </svg></router-link>
                 
                 <h1><b>LOGIN</b></h1>
-                <form class="w-50">
+                <form class="w-50" @submit.prevent="login">
                     <div class="mb-3">
                         <label for="email" class="form-label text-start">Correo electronico</label>
-                        <input  placeholder="example@email.com" type="email" class="form-control" id="email">
+                        <input required v-model="email" placeholder="example@email.com" type="email" class="form-control" id="email">
                     </div>
                     <div class="mb-5">
                         <label for="pswd" class="form-label">Contrasena</label>
-                        <input  placeholder="contrasena" type="password" class="form-control" id="pswd">
+                        <input required v-model="pswd" placeholder="contrasena" type="password" class="form-control" id="pswd">
                     </div>
                     <button type="submit" class="btn mb-2 py-3" style="background-color: #CFEAFD">INICIAR SESION</button>
                 </form>
@@ -42,6 +42,20 @@ export default {
     components: {
         Footer,
         Aside,
+    },
+
+    data() {
+        return {
+            email: "",
+            pswd: "",
+        }
+    },
+
+    methods: {
+        login: function() {
+            
+            // send to BE
+        }
     }
 }
 </script>
