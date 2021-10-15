@@ -17,6 +17,11 @@ export default new Vuex.Store({
       logged: false,
     }
   },
+  getters: {
+    userData: state => {
+      return state.user.logged === true ? state.user.data : null
+    }
+  },
   mutations: {
     setLogged(state, logged) {
       state.user.logged = logged

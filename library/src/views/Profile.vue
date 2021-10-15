@@ -20,13 +20,13 @@
                         <div class="col-12 col-md-6 p-2">
                             <div class="border">
                                 <h6>Nombre(s)</h6>
-                                <h3>Pepito</h3>
+                                <h3>{{user.f_name}}</h3>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 p-2">
                             <div class="border">
                                 <h6>Apellido(s)</h6>
-                                <h3>Pepito</h3>
+                                <h3>{{user.l_name}}</h3>
                             </div>
                         </div>
                     </div>
@@ -34,13 +34,13 @@
                         <div class="col-12 col-md-6 p-2">
                             <div class="border">
                                 <h6>Tipo de documento</h6>
-                                <h3>C.C</h3>
+                                <h3>{{user.doc_type}}</h3>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 p-2">
                             <div class="border">
                                 <h6>Numero de documento</h6>
-                                <h3>1053848978</h3>
+                                <h3>{{user.doc_num}}</h3>
                             </div>
                         </div>
                     </div>
@@ -48,13 +48,13 @@
                         <div class="col-12 col-md-6 p-2">
                             <div class="border">
                                 <h6>Email</h6>
-                                <h3>email@gmail.com</h3>
+                                <h3>{{user.email}}</h3>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 p-2">
                             <div class="border">
                                 <h6>telefono</h6>
-                                <h3>3143987799</h3>
+                                <h3>{{user.phone}}</h3>
                             </div>
                         </div>
                     </div>
@@ -80,6 +80,27 @@ export default {
         Header,
         Aside,
         Footer,
+    },
+
+    data() {
+        return {
+            user: {
+                f_name:'',
+                l_name:'',
+                email:'',
+                doc_type:'',
+                doc_num:'',
+                phone:'',
+            }
+        }
+    },
+
+    mounted: function() {
+        const user = this.$store.getters.userData
+        if (user != null) {
+            this.user = user
+            console.log(this.user.f_name)
+        }
     },
 
     methods: {
