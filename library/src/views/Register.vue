@@ -56,7 +56,7 @@
 
                     <button type="submit" class="btn mb-2 py-3" style="background-color: #CFEAFD">REGISTRARME</button>
                 </form>
-                
+                <p v-if="exists === true" class="text-danger">El usuario ya se encuentra registrado</p>
                 <div></div>
             </section>
         </div>
@@ -91,7 +91,7 @@ export default {
             phone: "",
             pswd: "",
             ver_pswd: "",
-            error: false
+            exists: false
         }
     },
 
@@ -114,9 +114,12 @@ export default {
                     const { newUser } = data
                     // console.log(JSON.stringify(newUser));
                     auth.setUserLogged(JSON.stringify(newUser))
+                    this.exists = false
                     this.$store.commit('setLogged', true)
                     this.$store.commit('setUserData', newUser)
                     this.$router.push( { name:'Home' } )
+                } else {
+                    this.exists = true
                 }
             }).catch(e => {
                 console.log(e)

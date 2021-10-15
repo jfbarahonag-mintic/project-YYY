@@ -25,8 +25,9 @@
                     </div>
                     <button type="submit" class="btn mb-2 py-3" style="background-color: #CFEAFD">INICIAR SESION</button>
                 </form>
-                
-                <div></div>
+                <div>
+                    <p class="text-danger" v-if="exists === false">El correo y la contrasena no coinciden</p>
+                </div>
             </section>
         </div>
         <Footer class="row d-none d-lg-block :minimalist=true"></Footer>
@@ -53,6 +54,7 @@ export default {
         return {
             email: "",
             pswd: "",
+            exists: true
         }
     },
 
@@ -66,11 +68,13 @@ export default {
                 if (res.data.status !== 'not logged') {
                     const { userDB } = res.data
                     auth.setUserLogged(JSON.stringify(userDB[0]))
+                    this.exists = true
                     this.$store.commit('setLogged', true)
                     this.$store.commit('setUserData', userDB[0])
                     this.$router.push( { name:'Home' } )
                 } else {
                     this.$store.commit('setLogged', false)
+                    this.exists = false
                 }
             }).catch(e => {
                 console.log(e)
