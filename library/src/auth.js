@@ -6,7 +6,6 @@ export default {
     },
 
     getUserLogged() {
-        console.log(Cookies.get('userLogged'));
         return Cookies.get('userLogged')
     },
 
