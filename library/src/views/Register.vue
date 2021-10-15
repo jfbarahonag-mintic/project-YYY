@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import auth from '../auth'
 import axios from 'axios'
 
 import Aside from '../components/Aside.vue'
@@ -108,9 +109,15 @@ export default {
                 phone: this.phone,
             }).then(res => {
                 const { data } = res
-                this.$store.commit('setUserData', data)
-                this.$store.commit('setLogged', true)
-                this.$router.push( { name:'Home' } )
+                if(data.status !== 'already registered')
+                {
+                    const { newUser } = data
+                    console.log(JSON.stringify(newUser));
+                    auth.setUserLogged(JSON.stringify(newUser))
+                    this.$store.commit('setLogged', true)
+                    this.$store.commit('setUserData', newUser)
+                    this.$router.push( { name:'Home' } )
+                }
             }).catch(e => {
                 console.log(e)
             })
