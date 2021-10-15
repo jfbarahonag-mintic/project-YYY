@@ -1,7 +1,7 @@
 <template>
 <div>
     <!-- header -->
-    <Header :user="username"/>
+    <Header/>
     <!-- end header -->
     <!-- novedades -->
     <Carousel title="Novedades" id="novedades" :books="books"/>
@@ -35,9 +35,7 @@ export default {
         Carousel,
         Footer,
     },
-    props: {
-        username: String
-    },
+    props: {},
     data() {
         return {
             books : [

@@ -1,7 +1,7 @@
 <template>
     <div class="header d-flex flex-column" style="background-color: rgba(72, 196, 250, 0.69);">
         <!-- user section -->
-        <User :msg="user || 'Mi cuenta'" class="align-self-end"></User>
+        <User class="align-self-end"></User>
         <!-- end user section -->
         <!-- nav section -->
         <NavBar></NavBar>
@@ -16,6 +16,7 @@ export default {
     name: "Header",
     props: {
         user: String,
+        logged: Boolean,
     },
     components: {
         NavBar,

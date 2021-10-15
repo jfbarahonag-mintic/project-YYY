@@ -13,11 +13,15 @@
             <div class="user-text">
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{msg}}
+                        {{getUsername() || 'Mi cuenta'}}
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <ul v-if="getLoggedStatus() === false" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <li><router-link to="/login" class="dropdown-item">INICIAR SESION</router-link></li>
                         <li><router-link to="/register" class="dropdown-item">REGISTRARSE</router-link></li>
+                    </ul>
+                    <ul v-else class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><router-link to="/profile" class="dropdown-item">IR A MI PERFIL</router-link></li>
+                        <!-- <li><router-link to="/register" class="dropdown-item">REGISTRARSE</router-link></li> -->
                     </ul>
                 </div>
             </div>
@@ -29,8 +33,15 @@
 <script>
 export default {
     name: "User",
-    props: {
-        msg: String,
+
+    methods: {
+        getLoggedStatus: function() {
+            return this.$store.state.user.logged;
+        },
+
+        getUsername: function() {
+            return this.$store.state.user.username;
+        },
     }
 }
 </script>
