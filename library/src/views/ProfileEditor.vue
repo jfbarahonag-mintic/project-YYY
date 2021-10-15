@@ -63,7 +63,7 @@ import Header from '../components/Header.vue'
 import Aside from '../components/Aside.vue'
 import Footer from '../components/Footer.vue'
 
-const BE_URL = "http://localhost:3000/api/v1/users"
+const BE_URL = "https://obscure-beach-34617.herokuapp.com/api/v1/users"
 
 export default {
     name: 'Editor',

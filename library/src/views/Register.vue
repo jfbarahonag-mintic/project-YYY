@@ -71,7 +71,7 @@ import axios from 'axios'
 import Aside from '../components/Aside.vue'
 import Footer from '../components/Footer.vue'
 
-let BE_URL = "http://localhost:3000/api/v1/users"
+let BE_URL = "https://obscure-beach-34617.herokuapp.com/api/v1/users"
 
 export default {
     components: {
