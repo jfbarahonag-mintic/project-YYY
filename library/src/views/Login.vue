@@ -35,6 +35,7 @@
 
 <script>
 import axios from 'axios'
+import auth from '../auth'
 
 import Footer from '../components/Footer.vue'
 import Aside from '../components/Aside.vue'
@@ -64,9 +65,10 @@ export default {
             }).then(res => {
                 if (res.data.status !== 'not logged') {
                     const { userDB } = res.data
-                    this.$router.push( { name:'Home' } )
+                    auth.setUserLogged(JSON.stringify(userDB[0]))
                     this.$store.commit('setLogged', true)
                     this.$store.commit('setUserData', userDB[0])
+                    this.$router.push( { name:'Home' } )
                 } else {
                     this.$store.commit('setLogged', false)
                 }

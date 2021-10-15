@@ -72,6 +72,8 @@
 </template>
 
 <script>
+import auth from '../auth'
+
 import Header from '../components/Header.vue'
 import Aside from '../components/Aside.vue'
 import Footer from '../components/Footer.vue'
@@ -104,6 +106,7 @@ export default {
 
     methods: {
         logout: function() {
+            auth.deleteUserLogged()
             this.$store.commit('setLogged', false)
             this.$router.push({name:'Home'})
         }
