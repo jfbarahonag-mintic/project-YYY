@@ -62,12 +62,11 @@ export default {
                 email: this.email,
                 pswd: this.pswd,
             }).then(res => {
-                console.log(res.data)
                 if (res.data.status !== 'not logged') {
-                    const { email } = res.data.data
+                    const { userDB } = res.data
                     this.$router.push( { name:'Home' } )
                     this.$store.commit('setLogged', true)
-                    this.$store.commit('setUsername', email)
+                    this.$store.commit('setUserData', userDB[0])
                 } else {
                     this.$store.commit('setLogged', false)
                 }

@@ -107,10 +107,10 @@ export default {
                 doc_num: number,
                 phone: this.phone,
             }).then(res => {
-                const { email } = res.data
-                this.$router.push( { name:'Home' } )
+                const { data } = res
+                this.$store.commit('setUserData', data)
                 this.$store.commit('setLogged', true)
-                this.$store.commit('setUsername', email)
+                this.$router.push( { name:'Home' } )
             }).catch(e => {
                 console.log(e)
             })

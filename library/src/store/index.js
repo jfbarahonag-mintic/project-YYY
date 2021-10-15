@@ -6,20 +6,32 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     user: {
+      data: {
+        f_name:'',
+        l_name:'',
+        email:'',
+        doc_type:'',
+        doc_num:'',
+        phone:'',
+      },
       logged: false,
-      username: '',
     }
   },
   mutations: {
     setLogged(state, logged) {
       state.user.logged = logged
       if (logged === false) {
-        state.user.username = ''
+        state.user.data.f_name = ''
+        state.user.data.l_name = ''
+        state.user.data.email = ''
+        state.user.data.doc_type = ''
+        state.user.data.doc_num = ''
+        state.user.data.phone = ''
       }
     },
 
-    setUsername(state, username) {
-      state.user.username = username
+    setUserData(state, data) {
+      state.user.data = data
     }
   },
   actions: {

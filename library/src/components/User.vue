@@ -40,7 +40,7 @@ export default {
         },
 
         getUsername: function() {
-            return this.$store.state.user.username;
+            return this.$store.state.user.data.f_name;
         },
     }
 }
