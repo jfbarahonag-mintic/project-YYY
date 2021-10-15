@@ -99,7 +99,6 @@ export default {
         const user = this.$store.getters.userData
         if (user != null) {
             this.user = user
-            console.log(this.user.f_name)
         }
     },
 
