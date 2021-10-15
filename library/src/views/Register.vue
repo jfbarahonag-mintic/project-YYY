@@ -112,7 +112,7 @@ export default {
                 if(data.status !== 'already registered')
                 {
                     const { newUser } = data
-                    console.log(JSON.stringify(newUser));
+                    // console.log(JSON.stringify(newUser));
                     auth.setUserLogged(JSON.stringify(newUser))
                     this.$store.commit('setLogged', true)
                     this.$store.commit('setUserData', newUser)
