@@ -18,54 +18,17 @@
                 <!-- end centro de ayuda -->
                 <!-- creadores -->
                 <div class=" col-12 col-lg-5 creators d-none d-lg-block">
-                    <div class="border border-white rounded d-flex flex-column align-items-center p-1">
+                    <div class="overflow-auto border border-white rounded d-flex flex-column align-items-center p-1">
                         <h6>Creadores</h6>
                         <ul class="list-unstyled d-flex">
-                            <li class="mx-2">
+                            <li class="mx-2" v-for="(member, idx) in members" :key="idx">
                                 <ul class="list-unstyled">
-                                    <li>Nombre</li>
-                                    <li>Email</li>
-                                    <li>Email</li>
-                                    <li>Celular</li>
-                                    <li><a href="#">Github</a></li>
+                                    <li>{{member.name}}</li>
+                                    <li>{{member.email}}</li>
+                                    <li><a style="color: inherit;" target="_blank" :href="member.github">Github</a></li>
                                 </ul>
                             </li>
-                            <li class="mx-2">
-                                <ul class="list-unstyled">
-                                    <li>Nombre</li>
-                                    <li>Email</li>
-                                    <li>Email</li>
-                                    <li>Celular</li>
-                                    <li><a href="#">Github</a></li>
-                                </ul>
-                            </li>
-                            <li class="mx-2">
-                                <ul class="list-unstyled">
-                                    <li>Nombre</li>
-                                    <li>Email</li>
-                                    <li>Email</li>
-                                    <li>Celular</li>
-                                    <li><a href="#">Github</a></li>
-                                </ul>
-                            </li>
-                            <li class="mx-2">
-                                <ul class="list-unstyled">
-                                    <li>Nombre</li>
-                                    <li>Email</li>
-                                    <li>Email</li>
-                                    <li>Celular</li>
-                                    <li><a href="#">Github</a></li>
-                                </ul>
-                            </li>
-                            <li class="mx-2">
-                                <ul class="list-unstyled">
-                                    <li>Nombre</li>
-                                    <li>Email</li>
-                                    <li>Email</li>
-                                    <li>Celular</li>
-                                    <li><a href="#">Github</a></li>
-                                </ul>
-                            </li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -74,10 +37,10 @@
                 <div class="col-12 col-lg-3 social h-100 d-flex flex-column justify-content-center align-items-center">
                     <div class="d-flex flex-column">
                         <h6>Sobre nosotros</h6>
-                        <div class="imgs">
-                            <img src="" alt="fb">
-                            <img src="" alt="ig">
-                            <img src="" alt="tw">
+                        <div class="social">
+                            <a target="_blank" href="https://www.facebook.com/La-Librer%C3%ADa-100763039068917" class="nav-item" style="color: inherit; text-decoration: none">fb</a> |
+                            <a target="_blank" href="https://www.instagram.com/la_libreria.col/?utm_medium=copy_link" class="nav-item" style="color: inherit; text-decoration: none">ig</a> |
+                            <a target="_blank" href="https://twitter.com/LibreriaCol" class="nav-item" style="color: inherit; text-decoration: none">tw</a>
                         </div>
                     </div>
                 </div>
@@ -124,6 +87,39 @@ export default {
             default: false,
         },
     },
+
+    data() {
+        return {
+            members: [
+                {
+                    name: "Milton Ceballos",
+                    // email: "mfceballosc@unal.edu.co",
+                    github: "https://github.com/mfceballosc"
+                },
+                {
+                    name: "Sebastian Moreno",
+                    // email: "sebitasmoreno20@gmail.com",
+                    github: "https://github.com/Semorg22"
+                },
+                {
+                    name: "Felipe Barahona",
+                    // email: "jfelipebgonzalez@gmail.com",
+                    github: "https://github.com/jfbarahonag"
+                },
+                {
+                    name: "Bladimir Rojas",
+                    // email: "parabladimir@gmail.com",
+                    github: "https://github.com/Blaromo"
+                },
+                {
+                    name: "Alexis Villamizar",
+                    // email: "alexvilla21co@gmail.com",
+                    github: "https://github.com/Elice2021"
+                },
+            ]
+        }    
+    },
+
 };
 </script>
 
